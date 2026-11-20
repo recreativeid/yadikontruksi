@@ -170,7 +170,7 @@
         <i data-lucide="chevron-right" class="w-4 h-4 text-secondaryText"></i>
       </a>
       <a href="#proses" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-lg font-heading font-semibold text-whiteText hover:bg-cardBg hover:text-goldAccent transition">
-        <span>Alur Kerja & Estimasi</span>
+        <span>Alur Kerja</span>
         <i data-lucide="chevron-right" class="w-4 h-4 text-secondaryText"></i>
       </a>
       <a href="#faq" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-lg font-heading font-semibold text-whiteText hover:bg-cardBg hover:text-goldAccent transition">
@@ -301,8 +301,8 @@
       <!-- Architectural / Construction Image -->
       <div class="w-full md:w-1/2">
         <div class="relative rounded-2xl overflow-hidden border border-borderColor bg-cardBg shadow-dark-card group">
-          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" 
-               alt="Perencanaan Arsitektur & Pembangunan YadiKontruksi" 
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" 
+               alt="Tim Ahli Mandor & Arsitek YadiKontruksi" 
                class="w-full h-64 sm:h-80 object-cover object-center group-hover:scale-105 transition duration-700">
           <div class="absolute inset-0 bg-gradient-to-t from-cardBg/90 via-transparent to-transparent"></div>
           
@@ -457,7 +457,7 @@
         <!-- Service 4: Kitchen Set -->
         <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group">
           <div class="relative w-full aspect-video sm:aspect-[21/9] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80" 
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=80" 
                  alt="Custom Kitchen Set YadiKontruksi" 
                  class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-cardBg via-transparent to-transparent"></div>
@@ -602,7 +602,7 @@
         <!-- Project 1 (Bangun Rumah) -->
         <div class="portfolio-card bangun group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
           <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=600&q=80" 
+            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" 
                  alt="Rumah Modern Minimalis 2 Lantai" 
                  loading="lazy"
                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -807,63 +807,6 @@
 
 
   <!-- ========================================================= -->
-  <!-- BONUS: KALKULATOR ESTIMASI BIAYA RAB (MandorProyek Style) -->
-  <!-- ========================================================= -->
-  <section class="py-14 sm:py-16 px-4 sm:px-6 bg-secondaryBg border-b border-borderColor">
-    <div class="max-w-2xl mx-auto bg-cardBg rounded-2xl p-6 sm:p-8 border border-borderColor shadow-dark-card">
-      
-      <div class="text-center mb-6">
-        <span class="text-goldAccent text-[11px] font-bold uppercase tracking-wider">Simulasi Anggaran Cepat</span>
-        <h3 class="font-heading font-bold text-xl sm:text-2xl text-whiteText mt-1">Hitung Estimasi Biaya Bangun / Renovasi</h3>
-        <p class="text-secondaryText text-xs mt-1">Dapatkan perkiraan biaya sebelum menentukan jadwal survei.</p>
-      </div>
-
-      <div class="space-y-4 text-xs sm:text-sm mb-6">
-        <div>
-          <label class="block text-secondaryText font-medium mb-1.5">Jenis Pekerjaan:</label>
-          <select id="sim-tipe" class="w-full bg-elevatedSurface border border-borderColor text-whiteText rounded-xl px-3.5 py-2.5 focus:border-goldAccent focus:outline-none">
-            <option value="bangun">Bangun Rumah Baru</option>
-            <option value="renovasi">Renovasi Menyeluruh</option>
-            <option value="kitchen">Custom Kitchen Set / Interior</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="block text-secondaryText font-medium mb-1.5">Estimasi Luas (m²):</label>
-          <div class="flex items-center gap-3">
-            <input type="range" id="sim-luas-range" min="30" max="400" value="100" class="w-full accent-goldAccent">
-            <span id="sim-luas-val" class="font-heading font-bold text-whiteText w-16 text-right">100 m²</span>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-secondaryText font-medium mb-1.5">Pilihan Spesifikasi Material:</label>
-          <select id="sim-paket" class="w-full bg-elevatedSurface border border-borderColor text-whiteText rounded-xl px-3.5 py-2.5 focus:border-goldAccent focus:outline-none">
-            <option value="3800000">Standar SNI (Rp 3,8 Jt/m²)</option>
-            <option value="4800000" selected>Menengah Favorit (Rp 4,8 Jt/m²)</option>
-            <option value="6800000">Premium Mewah (Rp 6,8 Jt/m²)</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Result Card -->
-      <div class="bg-elevatedSurface rounded-xl p-4 text-center border border-borderColor mb-5">
-        <span class="text-[10px] text-secondaryText uppercase tracking-wider block">Estimasi Kasar Anggaran</span>
-        <span id="sim-hasil" class="font-heading font-extrabold text-2xl sm:text-3xl text-goldAccent block mt-0.5">Rp 480.000.000</span>
-        <span class="text-[10px] text-secondaryText italic mt-1 block">*Perhitungan final dibuat dalam format RAB resmi setelah survei lapangan.</span>
-      </div>
-
-      <button id="sim-send-wa" 
-              class="w-full inline-flex items-center justify-center gap-2 bg-goldAccent hover:bg-goldHover text-primaryBg font-heading font-bold py-3 px-5 rounded-xl text-xs sm:text-sm shadow-gold-sm transition">
-        <i data-lucide="message-circle" class="w-4 h-4"></i>
-        <span>Kirim Rincian Simulasi Ini ke WhatsApp YadiKontruksi</span>
-      </button>
-
-    </div>
-  </section>
-
-
-  <!-- ========================================================= -->
   <!-- 10. FAQ SECTION (Clean Dark Accordion)                    -->
   <!-- ========================================================= -->
   <section id="faq" class="py-16 sm:py-20 px-5 sm:px-6 bg-primaryBg border-b border-borderColor">
@@ -927,7 +870,7 @@
           </button>
           <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 bg-elevatedSurface/40">
             <p class="py-4 text-xs sm:text-sm text-secondaryText leading-relaxed border-t border-borderColor/60">
-              Anda dapat menggunakan widget simulasi estimasi cepat di website ini, atau langsung menghubungi kami melalui WhatsApp di <a href="https://wa.me/628132274301" class="text-goldAccent font-semibold underline">+62 813-2274-301</a>. Tim kami siap menjadwalkan survei ke lokasi Anda untuk menyusun dokumen RAB resmi terperinci tanpa biaya survei.
+              Karena setiap proyek memiliki kondisi lahan, struktur tanah, dan spesifikasi material yang berbeda-beda, Anda dapat langsung menghubungi kami melalui WhatsApp di <a href="https://wa.me/628132274301" class="text-goldAccent font-semibold underline">+62 813-2274-301</a>. Tim kami siap menjadwalkan survei ke lokasi Anda untuk menyusun dokumen RAB resmi yang detail, transparan, dan disesuaikan langsung dengan pagu anggaran Anda tanpa dipungut biaya survei.
             </p>
           </div>
         </div>
@@ -1160,36 +1103,6 @@
             icon.classList.add('rotate-180');
           }
         });
-      });
-
-      // 4. Estimasi Biaya Interactive Calculation
-      const rangeLuas = document.getElementById('sim-luas-range');
-      const valLuas = document.getElementById('sim-luas-val');
-      const paketSelect = document.getElementById('sim-paket');
-      const tipeSelect = document.getElementById('sim-tipe');
-      const hasilSpan = document.getElementById('sim-hasil');
-      const sendWaBtn = document.getElementById('sim-send-wa');
-
-      function calculateEstimasi() {
-        const luas = parseInt(rangeLuas.value, 10);
-        valLuas.innerText = luas + ' m²';
-        const rate = parseInt(paketSelect.value, 10);
-        const total = luas * rate;
-        hasilSpan.innerText = 'Rp ' + total.toLocaleString('id-ID');
-      }
-
-      rangeLuas.addEventListener('input', calculateEstimasi);
-      paketSelect.addEventListener('change', calculateEstimasi);
-      tipeSelect.addEventListener('change', calculateEstimasi);
-
-      sendWaBtn.addEventListener('click', () => {
-        const tipe = tipeSelect.options[tipeSelect.selectedIndex].text;
-        const luas = rangeLuas.value;
-        const paket = paketSelect.options[paketSelect.selectedIndex].text;
-        const total = hasilSpan.innerText;
-
-        const message = `Halo YadiKontruksi, saya ingin konsultasi estimasi proyek:\n- Jenis: ${tipe}\n- Luas Bangunan: ${luas} m²\n- Spesifikasi: ${paket}\n- Estimasi Kasar: ${total}\n\nMohon info ketersediaan jadwal survei lokasi dan penyusunan RAB resminya. Terima kasih!`;
-        window.open('https://wa.me/628132274301?text=' + encodeURIComponent(message), '_blank');
       });
     });
   </script>

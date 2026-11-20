@@ -81,6 +81,26 @@
     a, button {
       -webkit-tap-highlight-color: transparent;
     }
+    /* Scroll Blur Animation */
+    .scroll-blur {
+      opacity: 0;
+      filter: blur(12px);
+      transform: translateY(22px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-blur.is-revealed {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0);
+    }
+    .delay-100 { transition-delay: 80ms; }
+    .delay-200 { transition-delay: 160ms; }
+    .delay-300 { transition-delay: 240ms; }
+    .delay-400 { transition-delay: 320ms; }
+
     /* Respect prefers-reduced-motion (Mobile Performance & Accessibility) */
     @media (prefers-reduced-motion: reduce) {
       *, ::before, ::after {
@@ -88,6 +108,12 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+      }
+      .scroll-blur {
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
+        transition: none !important;
       }
     }
   </style>
@@ -257,7 +283,7 @@
   <!-- 4. TRUST HIGHLIGHTS (Compact Horizontal Info Bar)        -->
   <!-- ========================================================= -->
   <section class="bg-secondaryBg border-b border-borderColor py-5 px-4 sm:px-6">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-4xl mx-auto scroll-blur">
       <div class="grid grid-cols-3 gap-2 sm:gap-4 text-center">
         
         <!-- Highlight 1 -->
@@ -299,7 +325,7 @@
     <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
       
       <!-- Architectural / Construction Image -->
-      <div class="w-full md:w-1/2">
+      <div class="w-full md:w-1/2 scroll-blur">
         <div class="relative rounded-2xl overflow-hidden border border-borderColor bg-cardBg shadow-dark-card group">
           <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" 
                alt="Tim Ahli Mandor & Arsitek YadiKontruksi" 
@@ -320,7 +346,7 @@
       </div>
 
       <!-- Editorial Text Content -->
-      <div class="w-full md:w-1/2 flex flex-col text-left">
+      <div class="w-full md:w-1/2 flex flex-col text-left scroll-blur delay-200">
         <span class="text-goldAccent text-xs font-bold uppercase tracking-widest mb-2 flex items-center gap-2">
           <span class="w-6 h-[1.5px] bg-goldAccent inline-block"></span>
           TENTANG KAMI
@@ -359,7 +385,7 @@
     <div class="max-w-4xl mx-auto">
       
       <!-- Section Header -->
-      <div class="text-center mb-12">
+      <div class="text-center mb-12 scroll-blur">
         <span class="text-goldAccent text-xs font-bold uppercase tracking-widest">Layanan Unggulan</span>
         <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText mt-1.5 max-w-lg mx-auto">
           Solusi Lengkap untuk Kebutuhan Hunian Anda.
@@ -371,7 +397,7 @@
       <div class="flex flex-col space-y-6">
 
         <!-- Service 1: Jasa Bangun Rumah -->
-        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group">
+        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group scroll-blur">
           <!-- 16:9 Image -->
           <div class="relative w-full aspect-video sm:aspect-[21/9] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" 
@@ -401,7 +427,7 @@
         </div>
 
         <!-- Service 2: Jasa Renovasi Rumah -->
-        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group">
+        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group scroll-blur">
           <div class="relative w-full aspect-video sm:aspect-[21/9] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=80" 
                  alt="Jasa Renovasi Rumah YadiKontruksi" 
@@ -428,7 +454,7 @@
         </div>
 
         <!-- Service 3: Jasa Desain Rumah -->
-        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group">
+        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group scroll-blur">
           <div class="relative w-full aspect-video sm:aspect-[21/9] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" 
                  alt="Jasa Desain Rumah & 3D YadiKontruksi" 
@@ -455,7 +481,7 @@
         </div>
 
         <!-- Service 4: Kitchen Set -->
-        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group">
+        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group scroll-blur">
           <div class="relative w-full aspect-video sm:aspect-[21/9] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=80" 
                  alt="Custom Kitchen Set YadiKontruksi" 
@@ -493,7 +519,7 @@
   <section id="keunggulan" class="py-16 sm:py-20 px-5 sm:px-6 bg-primaryBg border-b border-borderColor">
     <div class="max-w-4xl mx-auto">
       
-      <div class="text-center mb-12">
+      <div class="text-center mb-12 scroll-blur">
         <span class="text-goldAccent text-xs font-bold uppercase tracking-widest">Keunggulan Kami</span>
         <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText mt-1.5">
           Mengapa Memilih YadiKontruksi?
@@ -505,7 +531,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         
         <!-- Feature 1 -->
-        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition scroll-blur delay-100">
           <div class="w-12 h-12 rounded-xl bg-elevatedSurface border border-borderColor flex items-center justify-center text-goldAccent mb-4">
             <i data-lucide="file-check-2" class="w-6 h-6"></i>
           </div>
@@ -518,7 +544,7 @@
         </div>
 
         <!-- Feature 2 -->
-        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition scroll-blur delay-200">
           <div class="w-12 h-12 rounded-xl bg-elevatedSurface border border-borderColor flex items-center justify-center text-goldAccent mb-4">
             <i data-lucide="shield-check" class="w-6 h-6"></i>
           </div>
@@ -531,7 +557,7 @@
         </div>
 
         <!-- Feature 3 -->
-        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition scroll-blur delay-300">
           <div class="w-12 h-12 rounded-xl bg-elevatedSurface border border-borderColor flex items-center justify-center text-goldAccent mb-4">
             <i data-lucide="layout" class="w-6 h-6"></i>
           </div>
@@ -544,7 +570,7 @@
         </div>
 
         <!-- Feature 4 -->
-        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition scroll-blur delay-400">
           <div class="w-12 h-12 rounded-xl bg-elevatedSurface border border-borderColor flex items-center justify-center text-goldAccent mb-4">
             <i data-lucide="messages-square" class="w-6 h-6"></i>
           </div>
@@ -569,7 +595,7 @@
     <div class="max-w-4xl mx-auto">
       
       <!-- Section Header -->
-      <div class="text-center mb-8">
+      <div class="text-center mb-8 scroll-blur">
         <span class="text-goldAccent text-xs font-bold uppercase tracking-widest">Galeri Karya</span>
         <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText mt-1.5">
           Inspirasi dan Hasil Pengerjaan Kami.
@@ -578,7 +604,7 @@
       </div>
 
       <!-- Horizontally Scrollable Filters (No Full Page Overflow) -->
-      <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-4 pt-1 mb-6 px-1">
+      <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-4 pt-1 mb-6 px-1 scroll-blur">
         <button class="portfolio-filter-btn px-4 py-2 rounded-full text-xs font-heading font-semibold whitespace-nowrap transition bg-goldAccent text-primaryBg shadow-sm" data-category="all">
           Semua
         </button>
@@ -600,7 +626,7 @@
       <div class="grid grid-cols-2 gap-3 sm:gap-4" id="portfolio-grid">
         
         <!-- Project 1 (Bangun Rumah) -->
-        <div class="portfolio-card bangun group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+        <div class="portfolio-card bangun group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40 scroll-blur delay-100">
           <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" 
                  alt="Rumah Modern Minimalis 2 Lantai" 
@@ -617,7 +643,7 @@
         </div>
 
         <!-- Project 2 (Renovasi) -->
-        <div class="portfolio-card renovasi group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+        <div class="portfolio-card renovasi group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40 scroll-blur delay-200">
           <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" 
                  alt="Renovasi Fasad dan Carport" 
@@ -634,7 +660,7 @@
         </div>
 
         <!-- Project 3 (Kitchen Set) -->
-        <div class="portfolio-card kitchen group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+        <div class="portfolio-card kitchen group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40 scroll-blur delay-100">
           <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c902?auto=format&fit=crop&w=600&q=80" 
                  alt="Kitchen Set Minimalis Elegan" 
@@ -651,7 +677,7 @@
         </div>
 
         <!-- Project 4 (Desain Rumah) -->
-        <div class="portfolio-card desain group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+        <div class="portfolio-card desain group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40 scroll-blur delay-200">
           <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=600&q=80" 
                  alt="Desain Interior Ruang Keluarga" 
@@ -668,7 +694,7 @@
         </div>
 
         <!-- Project 5 (Bangun Rumah) -->
-        <div class="portfolio-card bangun group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+        <div class="portfolio-card bangun group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40 scroll-blur delay-100">
           <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" 
                  alt="Pembangunan Villa Tropis Kontemporer" 
@@ -685,7 +711,7 @@
         </div>
 
         <!-- Project 6 (Kitchen Set) -->
-        <div class="portfolio-card kitchen group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+        <div class="portfolio-card kitchen group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40 scroll-blur delay-200">
           <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80" 
                  alt="Kitchen Island & Mini Bar" 
@@ -703,7 +729,7 @@
 
       </div>
 
-      <div class="text-center mt-8">
+      <div class="text-center mt-8 scroll-blur">
         <p class="text-[11px] text-secondaryText italic mb-3">
           *Foto di atas merepresentasikan inspirasi desain arsitektur & standar estetika pengerjaan YadiKontruksi.
         </p>
@@ -725,7 +751,7 @@
   <section id="proses" class="py-16 sm:py-20 px-5 sm:px-6 bg-primaryBg border-b border-borderColor">
     <div class="max-w-4xl mx-auto">
       
-      <div class="text-center mb-12">
+      <div class="text-center mb-12 scroll-blur">
         <span class="text-goldAccent text-xs font-bold uppercase tracking-widest">Alur Pengerjaan</span>
         <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText mt-1.5">
           Proses Mudah, Mulai dari Konsultasi.
@@ -740,7 +766,7 @@
       <div class="relative pl-6 sm:pl-8 border-l-2 border-borderColor space-y-10 max-w-xl mx-auto">
         
         <!-- Step 01 -->
-        <div class="relative group">
+        <div class="relative group scroll-blur">
           <!-- Gold Numbered Circle -->
           <div class="absolute -left-[35px] sm:-left-[43px] top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primaryBg border-2 border-goldAccent flex items-center justify-center font-heading font-black text-xs sm:text-sm text-goldAccent shadow-gold-sm">
             01
@@ -756,7 +782,7 @@
         </div>
 
         <!-- Step 02 -->
-        <div class="relative group">
+        <div class="relative group scroll-blur delay-100">
           <div class="absolute -left-[35px] sm:-left-[43px] top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primaryBg border-2 border-goldAccent flex items-center justify-center font-heading font-black text-xs sm:text-sm text-goldAccent shadow-gold-sm">
             02
           </div>
@@ -771,7 +797,7 @@
         </div>
 
         <!-- Step 03 -->
-        <div class="relative group">
+        <div class="relative group scroll-blur delay-200">
           <div class="absolute -left-[35px] sm:-left-[43px] top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primaryBg border-2 border-goldAccent flex items-center justify-center font-heading font-black text-xs sm:text-sm text-goldAccent shadow-gold-sm">
             03
           </div>
@@ -786,7 +812,7 @@
         </div>
 
         <!-- Step 04 -->
-        <div class="relative group">
+        <div class="relative group scroll-blur delay-300">
           <div class="absolute -left-[35px] sm:-left-[43px] top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primaryBg border-2 border-goldAccent flex items-center justify-center font-heading font-black text-xs sm:text-sm text-goldAccent shadow-gold-sm">
             04
           </div>
@@ -812,7 +838,7 @@
   <section id="faq" class="py-16 sm:py-20 px-5 sm:px-6 bg-primaryBg border-b border-borderColor">
     <div class="max-w-3xl mx-auto">
       
-      <div class="text-center mb-12">
+      <div class="text-center mb-12 scroll-blur">
         <span class="text-goldAccent text-xs font-bold uppercase tracking-widest">Tanya Jawab</span>
         <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText mt-1.5">
           Pertanyaan yang Sering Diajukan
@@ -824,7 +850,7 @@
       <div class="space-y-3.5">
 
         <!-- Question 1 -->
-        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition">
+        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition scroll-blur delay-100">
           <button class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between text-whiteText font-heading font-semibold text-sm sm:text-base focus:outline-none">
             <span>Apakah melayani pembangunan rumah dari awal?</span>
             <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-goldAccent transition-transform duration-300"></i>
@@ -837,7 +863,7 @@
         </div>
 
         <!-- Question 2 -->
-        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition">
+        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition scroll-blur delay-150">
           <button class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between text-whiteText font-heading font-semibold text-sm sm:text-base focus:outline-none">
             <span>Apakah bisa renovasi sebagian rumah?</span>
             <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-goldAccent transition-transform duration-300"></i>
@@ -850,7 +876,7 @@
         </div>
 
         <!-- Question 3 -->
-        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition">
+        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition scroll-blur delay-200">
           <button class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between text-whiteText font-heading font-semibold text-sm sm:text-base focus:outline-none">
             <span>Apakah melayani desain rumah saja?</span>
             <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-goldAccent transition-transform duration-300"></i>
@@ -863,7 +889,7 @@
         </div>
 
         <!-- Question 4 -->
-        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition">
+        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition scroll-blur delay-250">
           <button class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between text-whiteText font-heading font-semibold text-sm sm:text-base focus:outline-none">
             <span>Bagaimana cara mengetahui estimasi biaya?</span>
             <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-goldAccent transition-transform duration-300"></i>
@@ -892,7 +918,7 @@
       <div class="absolute inset-0 bg-primaryBg/90 backdrop-blur-sm"></div>
     </div>
 
-    <div class="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center">
+    <div class="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center scroll-blur">
       <div class="w-12 h-12 rounded-2xl bg-goldAccent/15 border border-goldAccent/40 text-goldAccent flex items-center justify-center mb-4">
         <i data-lucide="sparkles" class="w-6 h-6"></i>
       </div>
@@ -1104,6 +1130,28 @@
           }
         });
       });
+
+      // 4. Scroll Blur Animation Observer
+      const blurElements = document.querySelectorAll('.scroll-blur');
+      if ('IntersectionObserver' in window) {
+        const blurObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target); // Keep visible once revealed
+            }
+          });
+        }, {
+          root: null,
+          rootMargin: '0px 0px -40px 0px',
+          threshold: 0.12
+        });
+
+        blurElements.forEach(el => blurObserver.observe(el));
+      } else {
+        // Fallback for older browsers
+        blurElements.forEach(el => el.classList.add('is-revealed'));
+      }
     });
   </script>
 </body>

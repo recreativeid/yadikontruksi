@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://yadikontruksi.com/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://yadikontruksi.com/assets/images/hero.jpg</image:loc>
+      <image:title>YadiKontruksi Jasa Bangun Rumah dan Renovasi Profesional</image:title>
+      <image:caption>Arsitektur modern dan konstruksi rumah tinggal berkualitas tinggi Jabodetabek</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://yadikontruksi.com/assets/images/logo.jpg</image:loc>
+      <image:title>Logo Resmi YadiKontruksi</image:title>
+    </image:image>
+  </url>
+</urlset>

@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>YadiKontruksi — Jasa Bangun Rumah, Renovasi & Kitchen Set Profesional</title>
+  <meta name="description" content="YadiKontruksi melayani jasa bangun rumah impian, renovasi, desain arsitektur, hingga pembuatan kitchen set berkualitas tinggi dengan biaya transparan dan bergaransi.">
+  <meta name="theme-color" content="#15191E">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+
+  <!-- Google Fonts: Manrope (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primaryBg: '#15191E',
+            secondaryBg: '#1B2026',
+            cardBg: '#222830',
+            elevatedSurface: '#282F37',
+            goldAccent: '#C69A58',
+            goldHover: '#b38848',
+            whiteText: '#F5F5F5',
+            secondaryText: '#A8ADB4',
+            borderColor: '#343B44',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'gold-sm': '0 2px 10px -2px rgba(198, 154, 88, 0.25)',
+            'gold-md': '0 4px 20px -2px rgba(198, 154, 88, 0.35)',
+            'dark-card': '0 8px 24px -4px rgba(0, 0, 0, 0.45)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar & Utilities */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #15191E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #343B44;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C69A58;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Safe Area Insets for Mobile */
+    .safe-bottom {
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
+    }
+    /* Prevent text selection flicker on tap */
+    a, button {
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* Respect prefers-reduced-motion (Mobile Performance & Accessibility) */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-primaryBg text-whiteText font-body antialiased overflow-x-hidden pb-28 selection:bg-goldAccent selection:text-primaryBg">
+
+  <!-- ========================================================= -->
+  <!-- 2. MOBILE HEADER (Compact Sticky Navigation: 64-72px)     -->
+  <!-- ========================================================= -->
+  <header class="sticky top-0 z-50 bg-primaryBg/95 backdrop-blur-md border-b border-borderColor transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-[68px] flex items-center justify-between">
+      
+      <!-- Brand Logo & Wordmark -->
+      <a href="#beranda" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-lg overflow-hidden bg-white/5 border border-borderColor flex items-center justify-center p-0.5 shadow-sm group-hover:border-goldAccent transition">
+          <img src="assets/images/logo.jpg" alt="Logo YadiKontruksi" class="w-full h-full object-contain">
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-extrabold text-base tracking-tight text-whiteText leading-tight flex items-center gap-1">
+            YADI<span class="text-goldAccent">KONTRUKSI</span>
+          </span>
+          <span class="text-[9px] uppercase tracking-wider text-secondaryText font-medium">Jasa Bangun & Renovasi</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu (Hidden on mobile) -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-secondaryText">
+        <a href="#beranda" class="text-goldAccent transition">Beranda</a>
+        <a href="#tentang" class="hover:text-goldAccent transition">Tentang Kami</a>
+        <a href="#layanan" class="hover:text-goldAccent transition">Layanan</a>
+        <a href="#keunggulan" class="hover:text-goldAccent transition">Keunggulan</a>
+        <a href="#portofolio" class="hover:text-goldAccent transition">Portofolio</a>
+        <a href="#proses" class="hover:text-goldAccent transition">Alur Kerja</a>
+        <a href="#faq" class="hover:text-goldAccent transition">FAQ</a>
+      </nav>
+
+      <!-- Right Header Actions (WA icon + Hamburger) -->
+      <div class="flex items-center gap-2">
+        <!-- Direct Quick WhatsApp Icon (Mobile Header) -->
+        <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20ingin%20konsultasi%20mengenai%20proyek%20bangunan" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Chat WhatsApp YadiKontruksi"
+           class="w-10 h-10 rounded-lg bg-cardBg border border-borderColor text-goldAccent hover:bg-elevatedSurface hover:border-goldAccent flex items-center justify-center transition shadow-sm">
+          <i data-lucide="message-circle" class="w-5 h-5 text-goldAccent"></i>
+        </a>
+
+        <!-- Hamburger Toggle Button -->
+        <button id="menu-toggle-btn" 
+                aria-label="Buka Menu Navigasi"
+                class="w-10 h-10 rounded-lg bg-cardBg border border-borderColor text-whiteText hover:text-goldAccent hover:border-goldAccent flex items-center justify-center transition">
+          <i data-lucide="menu" id="hamburger-icon" class="w-5 h-5"></i>
+          <i data-lucide="x" id="close-icon" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Full-Width Dark Navigation Drawer -->
+  <div id="mobile-nav-panel" 
+       class="fixed inset-x-0 top-[68px] bottom-0 bg-primaryBg/98 backdrop-blur-xl border-t border-borderColor z-40 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between p-6 overflow-y-auto">
+    <div class="flex flex-col space-y-2">
+      <div class="text-[11px] font-semibold text-goldAccent uppercase tracking-widest px-3 py-1">Navigasi Utama</div>
+      
+      <a href="#beranda" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-lg font-heading font-semibold text-whiteText hover:bg-cardBg hover:text-goldAccent transition">
+        <span>Beranda</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-secondaryText"></i>
+      </a>
+      <a href="#tentang" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-lg font-heading font-semibold text-whiteText hover:bg-cardBg hover:text-goldAccent transition">
+        <span>Tentang Kami</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-secondaryText"></i>
+      </a>
+      <a href="#layanan" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-lg font-heading font-semibold text-whiteText hover:bg-cardBg hover:text-goldAccent transition">
+        <span>Layanan Kami</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-secondaryText"></i>
+      </a>
+      <a href="#portofolio" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-lg font-heading font-semibold text-whiteText hover:bg-cardBg hover:text-goldAccent transition">
+        <span>Portofolio</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-secondaryText"></i>
+      </a>
+      <a href="#proses" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-lg font-heading font-semibold text-whiteText hover:bg-cardBg hover:text-goldAccent transition">
+        <span>Alur Kerja & Estimasi</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-secondaryText"></i>
+      </a>
+      <a href="#faq" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-lg font-heading font-semibold text-whiteText hover:bg-cardBg hover:text-goldAccent transition">
+        <span>FAQ (Pertanyaan Umum)</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-secondaryText"></i>
+      </a>
+      <a href="#kontak" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-lg font-heading font-semibold text-whiteText hover:bg-cardBg hover:text-goldAccent transition">
+        <span>Kontak</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-secondaryText"></i>
+      </a>
+    </div>
+
+    <!-- Drawer Footer Actions -->
+    <div class="pt-6 border-t border-borderColor space-y-4">
+      <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20ingin%20konsultasi%20melalui%20website" 
+         target="_blank" 
+         class="w-full flex items-center justify-center gap-2.5 bg-goldAccent hover:bg-goldHover text-primaryBg font-heading font-bold py-3.5 px-6 rounded-xl shadow-gold-sm transition">
+        <i data-lucide="message-circle" class="w-5 h-5 text-primaryBg"></i>
+        <span>Konsultasi WhatsApp Sekarang</span>
+      </a>
+
+      <div class="text-center text-xs text-secondaryText">
+        <p>Telepon: <span class="text-whiteText font-medium">+62 813-2274-301</span></p>
+        <p class="mt-0.5">Email: <span class="text-whiteText font-medium">ubeowner@gmail.com</span></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- 3. HERO SECTION (Mobile-First Architectural Visual)       -->
+  <!-- ========================================================= -->
+  <section id="beranda" class="relative min-h-[620px] sm:min-h-[680px] flex items-center justify-center overflow-hidden border-b border-borderColor">
+    <!-- Full-Width Architectural Background with Dark Gradient Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" 
+           alt="Arsitektur Rumah Modern Tropis YadiKontruksi" 
+           class="w-full h-full object-cover object-center transform scale-105 duration-1000">
+      <!-- Dark Cinematic Overlays for Max Legibility -->
+      <div class="absolute inset-0 bg-gradient-to-t from-primaryBg via-primaryBg/80 to-primaryBg/60"></div>
+      <div class="absolute inset-0 bg-radial-gradient from-transparent via-primaryBg/40 to-primaryBg/90"></div>
+    </div>
+
+    <!-- Hero Content Container -->
+    <div class="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 py-16 sm:py-20 text-center flex flex-col items-center">
+      
+      <!-- Small Label -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-elevatedSurface/80 border border-goldAccent/40 text-goldAccent text-[11px] sm:text-xs font-semibold tracking-wider uppercase mb-5 backdrop-blur-sm shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-goldAccent animate-pulse"></span>
+        JASA KONSTRUKSI & RENOVASI
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-heading font-extrabold text-[32px] sm:text-5xl text-whiteText tracking-tight leading-[1.2] mb-4 max-w-2xl">
+        Bangun Rumah Impian, Bersama <span class="text-goldAccent">YadiKontruksi.</span>
+      </h1>
+
+      <!-- Description -->
+      <p class="text-secondaryText text-[14px] sm:text-base leading-relaxed max-w-xl mb-8">
+        Solusi bangun rumah, renovasi, desain hunian, hingga kitchen set untuk kebutuhan Anda. Pengerjaan rapi, transparan, dan bergaransi.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="w-full max-w-xs flex flex-col items-center gap-4">
+        <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20ingin%20konsultasi%20membangun/renovasi%20rumah" 
+           target="_blank"
+           class="w-full inline-flex items-center justify-center gap-2.5 bg-goldAccent hover:bg-goldHover text-primaryBg font-heading font-bold text-base py-3.5 px-6 rounded-xl shadow-gold-md hover:scale-[1.02] active:scale-[0.98] transition">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span>Konsultasi Sekarang</span>
+        </a>
+
+        <!-- Secondary Text Link -->
+        <a href="#layanan" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-secondaryText hover:text-goldAccent transition pt-1">
+          <span>Jelajahi Layanan</span>
+          <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-goldAccent animate-bounce"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 4. TRUST HIGHLIGHTS (Compact Horizontal Info Bar)        -->
+  <!-- ========================================================= -->
+  <section class="bg-secondaryBg border-b border-borderColor py-5 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+        
+        <!-- Highlight 1 -->
+        <div class="flex flex-col items-center p-2.5 sm:p-3 rounded-lg bg-cardBg/60 border border-borderColor hover:border-goldAccent/40 transition">
+          <div class="w-8 h-8 rounded-full bg-elevatedSurface flex items-center justify-center text-goldAccent mb-1.5">
+            <i data-lucide="home" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs sm:text-sm font-heading font-bold text-whiteText">Bangun Rumah</span>
+          <span class="text-[10px] text-secondaryText mt-0.5 hidden xs:inline">Dari Nol Siap Huni</span>
+        </div>
+
+        <!-- Highlight 2 -->
+        <div class="flex flex-col items-center p-2.5 sm:p-3 rounded-lg bg-cardBg/60 border border-borderColor hover:border-goldAccent/40 transition">
+          <div class="w-8 h-8 rounded-full bg-elevatedSurface flex items-center justify-center text-goldAccent mb-1.5">
+            <i data-lucide="hammer" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs sm:text-sm font-heading font-bold text-whiteText">Renovasi</span>
+          <span class="text-[10px] text-secondaryText mt-0.5 hidden xs:inline">Cepat & Terencana</span>
+        </div>
+
+        <!-- Highlight 3 -->
+        <div class="flex flex-col items-center p-2.5 sm:p-3 rounded-lg bg-cardBg/60 border border-borderColor hover:border-goldAccent/40 transition">
+          <div class="w-8 h-8 rounded-full bg-elevatedSurface flex items-center justify-center text-goldAccent mb-1.5">
+            <i data-lucide="compass" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs sm:text-sm font-heading font-bold text-whiteText">Desain & Interior</span>
+          <span class="text-[10px] text-secondaryText mt-0.5 hidden xs:inline">3D & Kitchen Set</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 5. ABOUT SECTION (Vertical Editorial Mobile Layout)       -->
+  <!-- ========================================================= -->
+  <section id="tentang" class="py-16 sm:py-20 px-5 sm:px-6 bg-primaryBg border-b border-borderColor">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      
+      <!-- Architectural / Construction Image -->
+      <div class="w-full md:w-1/2">
+        <div class="relative rounded-2xl overflow-hidden border border-borderColor bg-cardBg shadow-dark-card group">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" 
+               alt="Perencanaan Arsitektur & Pembangunan YadiKontruksi" 
+               class="w-full h-64 sm:h-80 object-cover object-center group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-cardBg/90 via-transparent to-transparent"></div>
+          
+          <!-- Experience Badge -->
+          <div class="absolute bottom-4 left-4 right-4 bg-elevatedSurface/90 backdrop-blur-md p-3.5 rounded-xl border border-goldAccent/30 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-goldAccent/15 text-goldAccent flex items-center justify-center font-heading font-extrabold text-base">
+              YK
+            </div>
+            <div>
+              <p class="text-xs font-heading font-bold text-whiteText">Komitmen Kualitas & Waktu</p>
+              <p class="text-[11px] text-secondaryText">Standar material SNI & mandor ahli.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editorial Text Content -->
+      <div class="w-full md:w-1/2 flex flex-col text-left">
+        <span class="text-goldAccent text-xs font-bold uppercase tracking-widest mb-2 flex items-center gap-2">
+          <span class="w-6 h-[1.5px] bg-goldAccent inline-block"></span>
+          TENTANG KAMI
+        </span>
+
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText leading-snug mb-4">
+          Lebih dari Sekadar Membangun, Kami Membantu Mewujudkan Hunian.
+        </h2>
+
+        <p class="text-secondaryText text-sm sm:text-base leading-relaxed mb-6">
+          YadiKontruksi melayani berbagai kebutuhan konstruksi dan pengembangan hunian, mulai dari pembangunan rumah, renovasi bangunan, perencanaan desain, hingga pembuatan kitchen set.
+        </p>
+
+        <p class="text-secondaryText text-sm sm:text-base leading-relaxed mb-6">
+          Didukung oleh tenaga ahli berpengalaman dan sistem kerja terstruktur, kami menjamin kepastian anggaran tanpa biaya tersembunyi serta garansi pengerjaan tertulis.
+        </p>
+
+        <div>
+          <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20ingin%20tahu%20lebih%20banyak%20tentang%20layanan%20Anda" 
+             target="_blank"
+             class="inline-flex items-center gap-2 text-goldAccent hover:text-whiteText font-heading font-semibold text-sm border-b border-goldAccent pb-1 transition group">
+            <span>Konsultasikan Kebutuhan Proyek Anda</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 6. SERVICES SECTION (4 Vertically Stacked Service Cards)  -->
+  <!-- ========================================================= -->
+  <section id="layanan" class="py-16 sm:py-20 px-5 sm:px-6 bg-secondaryBg border-b border-borderColor">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <span class="text-goldAccent text-xs font-bold uppercase tracking-widest">Layanan Unggulan</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText mt-1.5 max-w-lg mx-auto">
+          Solusi Lengkap untuk Kebutuhan Hunian Anda.
+        </h2>
+        <div class="w-12 h-1 bg-goldAccent rounded-full mx-auto mt-3"></div>
+      </div>
+
+      <!-- 4 Stacked Service Cards -->
+      <div class="flex flex-col space-y-6">
+
+        <!-- Service 1: Jasa Bangun Rumah -->
+        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group">
+          <!-- 16:9 Image -->
+          <div class="relative w-full aspect-video sm:aspect-[21/9] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Jasa Bangun Rumah YadiKontruksi" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cardBg via-transparent to-transparent"></div>
+            <!-- Service Number Pill -->
+            <div class="absolute top-4 left-4 bg-primaryBg/90 backdrop-blur-md px-3 py-1 rounded-lg border border-goldAccent/40 font-heading font-bold text-xs text-goldAccent">
+              LAYANAN 01
+            </div>
+          </div>
+          <!-- Card Content -->
+          <div class="p-6 sm:p-7">
+            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-whiteText mb-2.5">
+              Jasa Bangun Rumah
+            </h3>
+            <p class="text-secondaryText text-sm leading-relaxed mb-5">
+              Pembangunan hunian dari nol (tanah kosong) hingga selesai serah terima kunci. Struktur kokoh, material teruji SNI, diawasi mandor profesional dengan skema pembayaran bertahap (termin).
+            </p>
+            <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20ingin%20konsultasi%20Jasa%20Bangun%20Rumah" 
+               target="_blank"
+               class="inline-flex items-center gap-2 text-goldAccent hover:text-goldHover font-heading font-semibold text-sm group-hover:underline">
+              <span>Konsultasi Bangun Rumah</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 2: Jasa Renovasi Rumah -->
+        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group">
+          <div class="relative w-full aspect-video sm:aspect-[21/9] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Jasa Renovasi Rumah YadiKontruksi" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cardBg via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 bg-primaryBg/90 backdrop-blur-md px-3 py-1 rounded-lg border border-goldAccent/40 font-heading font-bold text-xs text-goldAccent">
+              LAYANAN 02
+            </div>
+          </div>
+          <div class="p-6 sm:p-7">
+            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-whiteText mb-2.5">
+              Jasa Renovasi Rumah
+            </h3>
+            <p class="text-secondaryText text-sm leading-relaxed mb-5">
+              Peremajaan dan perombakan rumah lama, peninggian lantai (dak tingkat), penambahan ruangan, renovasi fasad tampak depan, perbaikan atap bocor, hingga pengecatan ulang total.
+            </p>
+            <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20ingin%20konsultasi%20Jasa%20Renovasi%20Rumah" 
+               target="_blank"
+               class="inline-flex items-center gap-2 text-goldAccent hover:text-goldHover font-heading font-semibold text-sm group-hover:underline">
+              <span>Konsultasi Renovasi Rumah</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 3: Jasa Desain Rumah -->
+        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group">
+          <div class="relative w-full aspect-video sm:aspect-[21/9] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Jasa Desain Rumah & 3D YadiKontruksi" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cardBg via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 bg-primaryBg/90 backdrop-blur-md px-3 py-1 rounded-lg border border-goldAccent/40 font-heading font-bold text-xs text-goldAccent">
+              LAYANAN 03
+            </div>
+          </div>
+          <div class="p-6 sm:p-7">
+            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-whiteText mb-2.5">
+              Jasa Desain Rumah
+            </h3>
+            <p class="text-secondaryText text-sm leading-relaxed mb-5">
+              Perencanaan arsitektur menyeluruh: denah tata ruang optimal, gambar kerja teknis (DED) untuk IMB/PBG, visualisasi 3D realistis, serta perhitungan Rencana Anggaran Biaya (RAB) akurat.
+            </p>
+            <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20ingin%20konsultasi%20Jasa%20Desain%20Rumah" 
+               target="_blank"
+               class="inline-flex items-center gap-2 text-goldAccent hover:text-goldHover font-heading font-semibold text-sm group-hover:underline">
+              <span>Konsultasi Desain Rumah</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 4: Kitchen Set -->
+        <div class="bg-cardBg border border-borderColor hover:border-goldAccent/50 rounded-2xl overflow-hidden shadow-dark-card transition duration-300 group">
+          <div class="relative w-full aspect-video sm:aspect-[21/9] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Custom Kitchen Set YadiKontruksi" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cardBg via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 bg-primaryBg/90 backdrop-blur-md px-3 py-1 rounded-lg border border-goldAccent/40 font-heading font-bold text-xs text-goldAccent">
+              LAYANAN 04
+            </div>
+          </div>
+          <div class="p-6 sm:p-7">
+            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-whiteText mb-2.5">
+              Kitchen Set
+            </h3>
+            <p class="text-secondaryText text-sm leading-relaxed mb-5">
+              Pembuatan kitchen set custom, lemari kabinet, minibar, dan interior dapur modern dengan material plywood tebal, finishing HPL tahan panas/air, serta aksesoris slow-motion premium.
+            </p>
+            <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20ingin%20konsultasi%20Pembuatan%20Kitchen%20Set" 
+               target="_blank"
+               class="inline-flex items-center gap-2 text-goldAccent hover:text-goldHover font-heading font-semibold text-sm group-hover:underline">
+              <span>Konsultasi Kitchen Set</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 7. WHY CHOOSE US (Mengapa Memilih YadiKontruksi?)         -->
+  <!-- ========================================================= -->
+  <section id="keunggulan" class="py-16 sm:py-20 px-5 sm:px-6 bg-primaryBg border-b border-borderColor">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <span class="text-goldAccent text-xs font-bold uppercase tracking-widest">Keunggulan Kami</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText mt-1.5">
+          Mengapa Memilih YadiKontruksi?
+        </h2>
+        <div class="w-12 h-1 bg-goldAccent rounded-full mx-auto mt-3"></div>
+      </div>
+
+      <!-- 2-col on large phones/tablets, 1-col on narrow phones -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        
+        <!-- Feature 1 -->
+        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-elevatedSurface border border-borderColor flex items-center justify-center text-goldAccent mb-4">
+            <i data-lucide="file-check-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-whiteText mb-2">
+            Perencanaan Sesuai Kebutuhan
+          </h3>
+          <p class="text-secondaryText text-sm leading-relaxed">
+            RAB disusun secara transparan dan detail, disesuaikan langsung dengan pagu anggaran Anda tanpa biaya terselubung.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-elevatedSurface border border-borderColor flex items-center justify-center text-goldAccent mb-4">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-whiteText mb-2">
+            Kualitas Pengerjaan
+          </h3>
+          <p class="text-secondaryText text-sm leading-relaxed">
+            Dikerjakan oleh tukang spesialis berpengalaman di bawah pengawasan mandor ketat, menjamin struktur kokoh dan rapi.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-elevatedSurface border border-borderColor flex items-center justify-center text-goldAccent mb-4">
+            <i data-lucide="layout" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-whiteText mb-2">
+            Desain Fungsional
+          </h3>
+          <p class="text-secondaryText text-sm leading-relaxed">
+            Menggabungkan keindahan estetika modern dengan kenyamanan sirkulasi udara, pencahayaan alami, dan efisiensi ruang.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-cardBg p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-elevatedSurface border border-borderColor flex items-center justify-center text-goldAccent mb-4">
+            <i data-lucide="messages-square" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-whiteText mb-2">
+            Konsultasi Mudah
+          </h3>
+          <p class="text-secondaryText text-sm leading-relaxed">
+            Layanan survei lokasi dan konsultasi langsung melalui WhatsApp ramah, responsif, dan siap membantu Anda setiap hari.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 8. PORTFOLIO GALLERY (Mobile 2-Column with Pill Filter)   -->
+  <!-- ========================================================= -->
+  <section id="portofolio" class="py-16 sm:py-20 px-4 sm:px-6 bg-secondaryBg border-b border-borderColor">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-8">
+        <span class="text-goldAccent text-xs font-bold uppercase tracking-widest">Galeri Karya</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText mt-1.5">
+          Inspirasi dan Hasil Pengerjaan Kami.
+        </h2>
+        <div class="w-12 h-1 bg-goldAccent rounded-full mx-auto mt-3"></div>
+      </div>
+
+      <!-- Horizontally Scrollable Filters (No Full Page Overflow) -->
+      <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-4 pt-1 mb-6 px-1">
+        <button class="portfolio-filter-btn px-4 py-2 rounded-full text-xs font-heading font-semibold whitespace-nowrap transition bg-goldAccent text-primaryBg shadow-sm" data-category="all">
+          Semua
+        </button>
+        <button class="portfolio-filter-btn px-4 py-2 rounded-full text-xs font-heading font-semibold whitespace-nowrap transition bg-elevatedSurface border border-borderColor text-secondaryText hover:text-whiteText" data-category="bangun">
+          Bangun Rumah
+        </button>
+        <button class="portfolio-filter-btn px-4 py-2 rounded-full text-xs font-heading font-semibold whitespace-nowrap transition bg-elevatedSurface border border-borderColor text-secondaryText hover:text-whiteText" data-category="renovasi">
+          Renovasi
+        </button>
+        <button class="portfolio-filter-btn px-4 py-2 rounded-full text-xs font-heading font-semibold whitespace-nowrap transition bg-elevatedSurface border border-borderColor text-secondaryText hover:text-whiteText" data-category="desain">
+          Desain
+        </button>
+        <button class="portfolio-filter-btn px-4 py-2 rounded-full text-xs font-heading font-semibold whitespace-nowrap transition bg-elevatedSurface border border-borderColor text-secondaryText hover:text-whiteText" data-category="kitchen">
+          Kitchen Set
+        </button>
+      </div>
+
+      <!-- 2-Column Mobile Image Gallery Grid -->
+      <div class="grid grid-cols-2 gap-3 sm:gap-4" id="portfolio-grid">
+        
+        <!-- Project 1 (Bangun Rumah) -->
+        <div class="portfolio-card bangun group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+          <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=600&q=80" 
+                 alt="Rumah Modern Minimalis 2 Lantai" 
+                 loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2 left-2 bg-primaryBg/85 text-goldAccent text-[9px] font-bold px-2 py-0.5 rounded backdrop-blur-sm border border-goldAccent/30">
+              Inspirasi Desain
+            </span>
+          </div>
+          <div class="p-2.5 sm:p-3">
+            <h4 class="font-heading font-bold text-xs sm:text-sm text-whiteText truncate">Rumah Modern 2 Lantai</h4>
+            <p class="text-[10px] sm:text-xs text-secondaryText">Bangun Baru • 140 m²</p>
+          </div>
+        </div>
+
+        <!-- Project 2 (Renovasi) -->
+        <div class="portfolio-card renovasi group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+          <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" 
+                 alt="Renovasi Fasad dan Carport" 
+                 loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2 left-2 bg-primaryBg/85 text-goldAccent text-[9px] font-bold px-2 py-0.5 rounded backdrop-blur-sm border border-goldAccent/30">
+              Inspirasi Desain
+            </span>
+          </div>
+          <div class="p-2.5 sm:p-3">
+            <h4 class="font-heading font-bold text-xs sm:text-sm text-whiteText truncate">Renovasi Fasad & Carport</h4>
+            <p class="text-[10px] sm:text-xs text-secondaryText">Renovasi Total • Jabodetabek</p>
+          </div>
+        </div>
+
+        <!-- Project 3 (Kitchen Set) -->
+        <div class="portfolio-card kitchen group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+          <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c902?auto=format&fit=crop&w=600&q=80" 
+                 alt="Kitchen Set Minimalis Elegan" 
+                 loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2 left-2 bg-primaryBg/85 text-goldAccent text-[9px] font-bold px-2 py-0.5 rounded backdrop-blur-sm border border-goldAccent/30">
+              Inspirasi Desain
+            </span>
+          </div>
+          <div class="p-2.5 sm:p-3">
+            <h4 class="font-heading font-bold text-xs sm:text-sm text-whiteText truncate">Kitchen Set Dark Gold</h4>
+            <p class="text-[10px] sm:text-xs text-secondaryText">Custom Interior • HPL Matte</p>
+          </div>
+        </div>
+
+        <!-- Project 4 (Desain Rumah) -->
+        <div class="portfolio-card desain group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+          <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" 
+                 alt="Desain Interior Ruang Keluarga" 
+                 loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2 left-2 bg-primaryBg/85 text-goldAccent text-[9px] font-bold px-2 py-0.5 rounded backdrop-blur-sm border border-goldAccent/30">
+              Inspirasi Desain
+            </span>
+          </div>
+          <div class="p-2.5 sm:p-3">
+            <h4 class="font-heading font-bold text-xs sm:text-sm text-whiteText truncate">Desain Interior Living Room</h4>
+            <p class="text-[10px] sm:text-xs text-secondaryText">Render 3D • Konsep Tropis</p>
+          </div>
+        </div>
+
+        <!-- Project 5 (Bangun Rumah) -->
+        <div class="portfolio-card bangun group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+          <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" 
+                 alt="Pembangunan Villa Tropis Kontemporer" 
+                 loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2 left-2 bg-primaryBg/85 text-goldAccent text-[9px] font-bold px-2 py-0.5 rounded backdrop-blur-sm border border-goldAccent/30">
+              Inspirasi Desain
+            </span>
+          </div>
+          <div class="p-2.5 sm:p-3">
+            <h4 class="font-heading font-bold text-xs sm:text-sm text-whiteText truncate">Villa Kontemporer</h4>
+            <p class="text-[10px] sm:text-xs text-secondaryText">Bangun Baru • 220 m²</p>
+          </div>
+        </div>
+
+        <!-- Project 6 (Kitchen Set) -->
+        <div class="portfolio-card kitchen group bg-cardBg rounded-xl overflow-hidden border border-borderColor shadow-sm transition hover:border-goldAccent/40">
+          <div class="relative aspect-square sm:aspect-[4/3] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80" 
+                 alt="Kitchen Island & Mini Bar" 
+                 loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2 left-2 bg-primaryBg/85 text-goldAccent text-[9px] font-bold px-2 py-0.5 rounded backdrop-blur-sm border border-goldAccent/30">
+              Inspirasi Desain
+            </span>
+          </div>
+          <div class="p-2.5 sm:p-3">
+            <h4 class="font-heading font-bold text-xs sm:text-sm text-whiteText truncate">Kitchen Island & Minibar</h4>
+            <p class="text-[10px] sm:text-xs text-secondaryText">Custom Interior • Kuarsa</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-8">
+        <p class="text-[11px] text-secondaryText italic mb-3">
+          *Foto di atas merepresentasikan inspirasi desain arsitektur & standar estetika pengerjaan YadiKontruksi.
+        </p>
+        <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20ingin%20melihat%20katalog%20portofolio%20proyek%20terbaru" 
+           target="_blank"
+           class="inline-flex items-center gap-2 bg-elevatedSurface hover:bg-cardBg border border-goldAccent/40 text-goldAccent px-5 py-2.5 rounded-xl font-heading font-semibold text-xs transition">
+          <i data-lucide="folder-git-2" class="w-4 h-4"></i>
+          <span>Minta Foto Proyek Lapangan via WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 9. WORK PROCESS (Vertical Timeline: 01 to 04)             -->
+  <!-- ========================================================= -->
+  <section id="proses" class="py-16 sm:py-20 px-5 sm:px-6 bg-primaryBg border-b border-borderColor">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <span class="text-goldAccent text-xs font-bold uppercase tracking-widest">Alur Pengerjaan</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText mt-1.5">
+          Proses Mudah, Mulai dari Konsultasi.
+        </h2>
+        <div class="w-12 h-1 bg-goldAccent rounded-full mx-auto mt-3"></div>
+        <p class="text-secondaryText text-sm mt-3 max-w-md mx-auto">
+          Setiap tahapan berjalan transparan, terikat kontrak kerja resmi, dan terpantau dengan jelas.
+        </p>
+      </div>
+
+      <!-- Vertical Timeline -->
+      <div class="relative pl-6 sm:pl-8 border-l-2 border-borderColor space-y-10 max-w-xl mx-auto">
+        
+        <!-- Step 01 -->
+        <div class="relative group">
+          <!-- Gold Numbered Circle -->
+          <div class="absolute -left-[35px] sm:-left-[43px] top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primaryBg border-2 border-goldAccent flex items-center justify-center font-heading font-black text-xs sm:text-sm text-goldAccent shadow-gold-sm">
+            01
+          </div>
+          <div class="bg-cardBg p-5 sm:p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+            <h3 class="font-heading font-bold text-base sm:text-lg text-whiteText mb-1.5">
+              Konsultasi Kebutuhan
+            </h3>
+            <p class="text-secondaryText text-xs sm:text-sm leading-relaxed">
+              Hubungi kami melalui WhatsApp untuk menyampaikan rencana pembangunan, renovasi, atau interior Anda. Tim kami siap melakukan survei lokasi dan pengukuran awal secara gratis.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 02 -->
+        <div class="relative group">
+          <div class="absolute -left-[35px] sm:-left-[43px] top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primaryBg border-2 border-goldAccent flex items-center justify-center font-heading font-black text-xs sm:text-sm text-goldAccent shadow-gold-sm">
+            02
+          </div>
+          <div class="bg-cardBg p-5 sm:p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+            <h3 class="font-heading font-bold text-base sm:text-lg text-whiteText mb-1.5">
+              Diskusi dan Perencanaan
+            </h3>
+            <p class="text-secondaryText text-xs sm:text-sm leading-relaxed">
+              Penyusunan konsep desain ruang, pemilihan spesifikasi material, dan pembuatan Rencana Anggaran Biaya (RAB) yang transparan dan dapat disesuaikan dengan budget Anda.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 03 -->
+        <div class="relative group">
+          <div class="absolute -left-[35px] sm:-left-[43px] top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primaryBg border-2 border-goldAccent flex items-center justify-center font-heading font-black text-xs sm:text-sm text-goldAccent shadow-gold-sm">
+            03
+          </div>
+          <div class="bg-cardBg p-5 sm:p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+            <h3 class="font-heading font-bold text-base sm:text-lg text-whiteText mb-1.5">
+              Kesepakatan Pengerjaan
+            </h3>
+            <p class="text-secondaryText text-xs sm:text-sm leading-relaxed">
+              Penandatanganan Surat Perjanjian Kerja (SPK) resmi bermeterai, penetapan jadwal pengerjaan (*time schedule*), dan kesepakatan skema pembayaran bertahap (termin progres).
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 04 -->
+        <div class="relative group">
+          <div class="absolute -left-[35px] sm:-left-[43px] top-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primaryBg border-2 border-goldAccent flex items-center justify-center font-heading font-black text-xs sm:text-sm text-goldAccent shadow-gold-sm">
+            04
+          </div>
+          <div class="bg-cardBg p-5 sm:p-6 rounded-xl border border-borderColor hover:border-goldAccent/40 transition">
+            <h3 class="font-heading font-bold text-base sm:text-lg text-whiteText mb-1.5">
+              Pelaksanaan Proyek & Garansi
+            </h3>
+            <p class="text-secondaryText text-xs sm:text-sm leading-relaxed">
+              Eksekusi di lapangan dengan pengawasan mandor, laporan progres berkala kepada pemilik rumah, serah terima kunci tepat waktu, serta garansi masa pemeliharaan resmi.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- BONUS: KALKULATOR ESTIMASI BIAYA RAB (MandorProyek Style) -->
+  <!-- ========================================================= -->
+  <section class="py-14 sm:py-16 px-4 sm:px-6 bg-secondaryBg border-b border-borderColor">
+    <div class="max-w-2xl mx-auto bg-cardBg rounded-2xl p-6 sm:p-8 border border-borderColor shadow-dark-card">
+      
+      <div class="text-center mb-6">
+        <span class="text-goldAccent text-[11px] font-bold uppercase tracking-wider">Simulasi Anggaran Cepat</span>
+        <h3 class="font-heading font-bold text-xl sm:text-2xl text-whiteText mt-1">Hitung Estimasi Biaya Bangun / Renovasi</h3>
+        <p class="text-secondaryText text-xs mt-1">Dapatkan perkiraan biaya sebelum menentukan jadwal survei.</p>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm mb-6">
+        <div>
+          <label class="block text-secondaryText font-medium mb-1.5">Jenis Pekerjaan:</label>
+          <select id="sim-tipe" class="w-full bg-elevatedSurface border border-borderColor text-whiteText rounded-xl px-3.5 py-2.5 focus:border-goldAccent focus:outline-none">
+            <option value="bangun">Bangun Rumah Baru</option>
+            <option value="renovasi">Renovasi Menyeluruh</option>
+            <option value="kitchen">Custom Kitchen Set / Interior</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-secondaryText font-medium mb-1.5">Estimasi Luas (m²):</label>
+          <div class="flex items-center gap-3">
+            <input type="range" id="sim-luas-range" min="30" max="400" value="100" class="w-full accent-goldAccent">
+            <span id="sim-luas-val" class="font-heading font-bold text-whiteText w-16 text-right">100 m²</span>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-secondaryText font-medium mb-1.5">Pilihan Spesifikasi Material:</label>
+          <select id="sim-paket" class="w-full bg-elevatedSurface border border-borderColor text-whiteText rounded-xl px-3.5 py-2.5 focus:border-goldAccent focus:outline-none">
+            <option value="3800000">Standar SNI (Rp 3,8 Jt/m²)</option>
+            <option value="4800000" selected>Menengah Favorit (Rp 4,8 Jt/m²)</option>
+            <option value="6800000">Premium Mewah (Rp 6,8 Jt/m²)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div class="bg-elevatedSurface rounded-xl p-4 text-center border border-borderColor mb-5">
+        <span class="text-[10px] text-secondaryText uppercase tracking-wider block">Estimasi Kasar Anggaran</span>
+        <span id="sim-hasil" class="font-heading font-extrabold text-2xl sm:text-3xl text-goldAccent block mt-0.5">Rp 480.000.000</span>
+        <span class="text-[10px] text-secondaryText italic mt-1 block">*Perhitungan final dibuat dalam format RAB resmi setelah survei lapangan.</span>
+      </div>
+
+      <button id="sim-send-wa" 
+              class="w-full inline-flex items-center justify-center gap-2 bg-goldAccent hover:bg-goldHover text-primaryBg font-heading font-bold py-3 px-5 rounded-xl text-xs sm:text-sm shadow-gold-sm transition">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        <span>Kirim Rincian Simulasi Ini ke WhatsApp YadiKontruksi</span>
+      </button>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 10. FAQ SECTION (Clean Dark Accordion)                    -->
+  <!-- ========================================================= -->
+  <section id="faq" class="py-16 sm:py-20 px-5 sm:px-6 bg-primaryBg border-b border-borderColor">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <span class="text-goldAccent text-xs font-bold uppercase tracking-widest">Tanya Jawab</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-whiteText mt-1.5">
+          Pertanyaan yang Sering Diajukan
+        </h2>
+        <div class="w-12 h-1 bg-goldAccent rounded-full mx-auto mt-3"></div>
+      </div>
+
+      <!-- Accordion Container -->
+      <div class="space-y-3.5">
+
+        <!-- Question 1 -->
+        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition">
+          <button class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between text-whiteText font-heading font-semibold text-sm sm:text-base focus:outline-none">
+            <span>Apakah melayani pembangunan rumah dari awal?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-goldAccent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 bg-elevatedSurface/40">
+            <p class="py-4 text-xs sm:text-sm text-secondaryText leading-relaxed border-t border-borderColor/60">
+              Ya, tentu saja. YadiKontruksi melayani pembangunan rumah dari nol di atas tanah kosong sampai bangunan selesai dan siap dihuni (sistem *turnkey project*). Kami mengurus pembuatan denah, struktur pondasi, dinding, atap, instalasi MEP, hingga finishing akhir.
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition">
+          <button class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between text-whiteText font-heading font-semibold text-sm sm:text-base focus:outline-none">
+            <span>Apakah bisa renovasi sebagian rumah?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-goldAccent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 bg-elevatedSurface/40">
+            <p class="py-4 text-xs sm:text-sm text-secondaryText leading-relaxed border-t border-borderColor/60">
+              Bisa. Kami melayani berbagai skala renovasi, mulai dari peningkatan lantai (dak tingkat), penambahan ruangan atau kamar, perombakan fasad rumah, renovasi dapur/kamar mandi, hingga perbaikan atap bocor atau penggantian rangka baja ringan.
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition">
+          <button class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between text-whiteText font-heading font-semibold text-sm sm:text-base focus:outline-none">
+            <span>Apakah melayani desain rumah saja?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-goldAccent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 bg-elevatedSurface/40">
+            <p class="py-4 text-xs sm:text-sm text-secondaryText leading-relaxed border-t border-borderColor/60">
+              Ya, kami menyediakan paket khusus Jasa Desain Rumah. Anda akan mendapatkan paket gambar denah arsitektur, gambar kerja teknis (DED), gambar 3D tampak fasad dan interior, serta file RAB komprehensif yang siap digunakan untuk pengurusan izin PBG/IMB.
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item bg-cardBg border border-borderColor rounded-xl overflow-hidden transition">
+          <button class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between text-whiteText font-heading font-semibold text-sm sm:text-base focus:outline-none">
+            <span>Bagaimana cara mengetahui estimasi biaya?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-goldAccent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-5 bg-elevatedSurface/40">
+            <p class="py-4 text-xs sm:text-sm text-secondaryText leading-relaxed border-t border-borderColor/60">
+              Anda dapat menggunakan widget simulasi estimasi cepat di website ini, atau langsung menghubungi kami melalui WhatsApp di <a href="https://wa.me/628132274301" class="text-goldAccent font-semibold underline">+62 813-2274-301</a>. Tim kami siap menjadwalkan survei ke lokasi Anda untuk menyusun dokumen RAB resmi terperinci tanpa biaya survei.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 11. FINAL CTA (Large Architectural Background + Overlay)  -->
+  <!-- ========================================================= -->
+  <section class="relative py-20 px-5 sm:px-6 overflow-hidden border-b border-borderColor">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
+           alt="Wujudkan Rumah Bersama YadiKontruksi" 
+           class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-primaryBg/90 backdrop-blur-sm"></div>
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center">
+      <div class="w-12 h-12 rounded-2xl bg-goldAccent/15 border border-goldAccent/40 text-goldAccent flex items-center justify-center mb-4">
+        <i data-lucide="sparkles" class="w-6 h-6"></i>
+      </div>
+
+      <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-whiteText leading-tight mb-3">
+        Punya Rencana Membangun atau Merenovasi Rumah?
+      </h2>
+
+      <p class="text-secondaryText text-sm sm:text-base leading-relaxed mb-8 max-w-lg">
+        Mari diskusikan kebutuhan hunian Anda bersama YadiKontruksi. Dapatkan konsultasi ramah, survei lokasi, dan estimasi biaya transparan.
+      </p>
+
+      <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20punya%20rencana%20proyek%20dan%20ingin%20konsultasi%20langsung" 
+         target="_blank"
+         class="inline-flex items-center justify-center gap-2.5 bg-goldAccent hover:bg-goldHover text-primaryBg font-heading font-bold text-sm sm:text-base py-4 px-8 rounded-xl shadow-gold-md hover:scale-[1.02] active:scale-[0.98] transition w-full sm:w-auto">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        <span>Konsultasi Melalui WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- 13. FOOTER (Compact Complete Mobile Footer)               -->
+  <!-- ========================================================= -->
+  <footer id="kontak" class="bg-secondaryBg text-secondaryText text-xs pt-12 pb-8 px-5 sm:px-6">
+    <div class="max-w-4xl mx-auto space-y-8">
+      
+      <!-- Logo & Short Company Description -->
+      <div class="flex flex-col items-start space-y-3">
+        <a href="#beranda" class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg overflow-hidden bg-white/5 border border-borderColor flex items-center justify-center p-0.5">
+            <img src="assets/images/logo.jpg" alt="Logo YadiKontruksi" class="w-full h-full object-contain">
+          </div>
+          <span class="font-heading font-extrabold text-lg text-whiteText tracking-tight">
+            YADI<span class="text-goldAccent">KONTRUKSI</span>
+          </span>
+        </a>
+        <p class="text-secondaryText text-xs leading-relaxed max-w-sm">
+          YadiKontruksi adalah mitra kontraktor terpercaya untuk jasa bangun rumah baru, renovasi hunian, perencanaan arsitektur, hingga pembuatan kitchen set berkualitas dengan jaminan garansi.
+        </p>
+      </div>
+
+      <!-- Quick Service Links -->
+      <div class="border-t border-borderColor/60 pt-6">
+        <h4 class="font-heading font-bold text-sm text-whiteText mb-3 uppercase tracking-wider text-[11px] text-goldAccent">
+          Layanan Kami
+        </h4>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <a href="#layanan" class="hover:text-goldAccent transition">Jasa Bangun Rumah</a>
+          <a href="#layanan" class="hover:text-goldAccent transition">Jasa Renovasi Rumah</a>
+          <a href="#layanan" class="hover:text-goldAccent transition">Jasa Desain Rumah</a>
+          <a href="#layanan" class="hover:text-goldAccent transition">Kitchen Set & Interior</a>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="border-t border-borderColor/60 pt-6 space-y-2">
+        <h4 class="font-heading font-bold text-sm text-whiteText mb-3 uppercase tracking-wider text-[11px] text-goldAccent">
+          Hubungi Kami
+        </h4>
+        <div class="flex items-center gap-2">
+          <i data-lucide="phone-call" class="w-4 h-4 text-goldAccent"></i>
+          <span>WhatsApp / Telepon:</span>
+          <a href="https://wa.me/628132274301" target="_blank" class="text-whiteText font-medium hover:text-goldAccent transition">
+            +62 813-2274-301
+          </a>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="mail" class="w-4 h-4 text-goldAccent"></i>
+          <span>Email:</span>
+          <a href="mailto:ubeowner@gmail.com" class="text-whiteText font-medium hover:text-goldAccent transition">
+            ubeowner@gmail.com
+          </a>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-goldAccent"></i>
+          <span>Wilayah Layanan:</span>
+          <span class="text-whiteText">Jabodetabek & Wilayah Sekitarnya</span>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-borderColor/60 pt-6 text-center text-[11px] text-secondaryText">
+        <p>&copy; 2026 YadiKontruksi. All rights reserved.</p>
+        <p class="mt-0.5 text-[10px] text-secondaryText/70">Membangun dengan Komitmen, Mutu, dan Integritas.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ========================================================= -->
+  <!-- 12. MOBILE STICKY WHATSAPP BUTTON (Critical Conversion)   -->
+  <!-- ========================================================= -->
+  <aside aria-label="Aksi Cepat Konsultasi" 
+         class="fixed bottom-0 left-0 right-0 z-40 bg-elevatedSurface/95 backdrop-blur-md border-t border-borderColor shadow-2xl px-4 py-2.5 safe-bottom">
+    <div class="max-w-md mx-auto flex items-center justify-between gap-3">
+      
+      <!-- Left: Supporting Text -->
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-full bg-goldAccent/15 border border-goldAccent/40 flex items-center justify-center flex-shrink-0 text-goldAccent">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+        </div>
+        <div class="truncate">
+          <span class="block text-xs font-heading font-bold text-whiteText truncate">Konsultasi Gratis</span>
+          <span class="block text-[10px] text-secondaryText truncate">Diskusikan proyek Anda</span>
+        </div>
+      </div>
+
+      <!-- Right: Main Call to Action Button -->
+      <a href="https://wa.me/628132274301?text=Halo%20YadiKontruksi,%20saya%20ingin%20konsultasi%20gratis%20mengenai%20proyek%20hunian%20saya" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="flex-shrink-0 inline-flex items-center gap-1.5 bg-goldAccent hover:bg-goldHover active:scale-95 text-primaryBg font-heading font-extrabold text-xs sm:text-sm py-2.5 px-4 sm:px-5 rounded-xl shadow-gold-sm transition">
+        <span>Chat WhatsApp</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+
+    </div>
+  </aside>
+
+
+  <!-- ========================================================= -->
+  <!-- CLIENT JAVASCRIPT: Navigation, Filters, Accordion, Calc   -->
+  <!-- ========================================================= -->
+  <script>
+    // Initialize Lucide Icons
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // 1. Mobile Menu Drawer Toggle
+      const menuBtn = document.getElementById('menu-toggle-btn');
+      const mobileNav = document.getElementById('mobile-nav-panel');
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
+      const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+      let isOpen = false;
+
+      function toggleMenu() {
+        isOpen = !isOpen;
+        if (isOpen) {
+          mobileNav.classList.remove('translate-x-full');
+          hamburgerIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+          document.body.style.overflow = 'hidden'; // lock scroll
+        } else {
+          mobileNav.classList.add('translate-x-full');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      }
+
+      menuBtn.addEventListener('click', toggleMenu);
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (isOpen) toggleMenu();
+        });
+      });
+
+      // 2. Portfolio Category Filter
+      const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+      const cards = document.querySelectorAll('.portfolio-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-category');
+
+          // Update active pill styling
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-goldAccent', 'text-primaryBg', 'shadow-sm');
+            b.classList.add('bg-elevatedSurface', 'border', 'border-borderColor', 'text-secondaryText');
+          });
+          btn.classList.add('bg-goldAccent', 'text-primaryBg', 'shadow-sm');
+          btn.classList.remove('bg-elevatedSurface', 'border', 'border-borderColor', 'text-secondaryText');
+
+          // Filter card visibility
+          cards.forEach(card => {
+            if (cat === 'all' || card.classList.contains(cat)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 3. FAQ Accordion Toggle
+      const faqBtns = document.querySelectorAll('.faq-btn');
+
+      faqBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling;
+          const icon = btn.querySelector('.faq-icon');
+          const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+          // Close all open accordions first for clean mobile experience
+          document.querySelectorAll('.faq-content').forEach(c => c.style.maxHeight = null);
+          document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+          if (!isExpanded) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.classList.add('rotate-180');
+          }
+        });
+      });
+
+      // 4. Estimasi Biaya Interactive Calculation
+      const rangeLuas = document.getElementById('sim-luas-range');
+      const valLuas = document.getElementById('sim-luas-val');
+      const paketSelect = document.getElementById('sim-paket');
+      const tipeSelect = document.getElementById('sim-tipe');
+      const hasilSpan = document.getElementById('sim-hasil');
+      const sendWaBtn = document.getElementById('sim-send-wa');
+
+      function calculateEstimasi() {
+        const luas = parseInt(rangeLuas.value, 10);
+        valLuas.innerText = luas + ' m²';
+        const rate = parseInt(paketSelect.value, 10);
+        const total = luas * rate;
+        hasilSpan.innerText = 'Rp ' + total.toLocaleString('id-ID');
+      }
+
+      rangeLuas.addEventListener('input', calculateEstimasi);
+      paketSelect.addEventListener('change', calculateEstimasi);
+      tipeSelect.addEventListener('change', calculateEstimasi);
+
+      sendWaBtn.addEventListener('click', () => {
+        const tipe = tipeSelect.options[tipeSelect.selectedIndex].text;
+        const luas = rangeLuas.value;
+        const paket = paketSelect.options[paketSelect.selectedIndex].text;
+        const total = hasilSpan.innerText;
+
+        const message = `Halo YadiKontruksi, saya ingin konsultasi estimasi proyek:\n- Jenis: ${tipe}\n- Luas Bangunan: ${luas} m²\n- Spesifikasi: ${paket}\n- Estimasi Kasar: ${total}\n\nMohon info ketersediaan jadwal survei lokasi dan penyusunan RAB resminya. Terima kasih!`;
+        window.open('https://wa.me/628132274301?text=' + encodeURIComponent(message), '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
